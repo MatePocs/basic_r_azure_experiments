@@ -1,0 +1,16 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: >-
+  Rscript my_agaricus.R
+  --RData_file ${{inputs.RData_data_source}}
+code:
+  local_path: src
+inputs:
+  RData_data_source: 
+    file: azureml://datastores/workspaceblobstore/paths/UI/11-18-2021_102231_UTC/my_agaricus_data.RData
+environment:
+  build:
+    local_path: docker-context
+compute: azureml:MP-StandardD1
+display_name: my_agaricus
+experiment_name: r_basic_experiments
+description: Run the basic LightGBM walkthrough. 

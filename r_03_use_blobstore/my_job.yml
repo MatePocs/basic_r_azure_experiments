@@ -1,0 +1,16 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: >-
+  Rscript use_blobstore.R
+  --csv_file ${{inputs.csv_data_source}}
+code:
+  local_path: src
+inputs:
+  csv_data_source: 
+    file: azureml://datastores/workspaceblobstore/paths/UI/11-18-2021_035912_UTC/my_dt.csv
+environment:
+  build:
+    local_path: docker-context
+compute: azureml:MP-StandardD1
+display_name: use_blobstore
+experiment_name: r_basic_experiments
+description: Use data uploaded to the DataStore. 

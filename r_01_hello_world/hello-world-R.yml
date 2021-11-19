@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: >-
+  Rscript hello-world.R
+code:
+  local_path: src
+environment:
+  build:
+    local_path: docker-context
+compute: azureml:MP-StandardD1
+display_name: hello_world
+experiment_name: r_basic_experiments
+description: Printing out hello world.  

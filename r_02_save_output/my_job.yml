@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: >-
+  Rscript save_output.R
+code:
+  local_path: src
+environment:
+  build:
+    local_path: docker-context
+compute: azureml:MP-StandardD1
+display_name: save_output
+experiment_name: r_basic_experiments
+description: Saving a csv output. 

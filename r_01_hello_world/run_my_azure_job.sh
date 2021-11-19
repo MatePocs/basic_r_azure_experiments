@@ -1,0 +1,1 @@
+az ml job create --file hello-world-R.yml --web --resource-group MP_ResourceGroup --workspace-name mp_ws_01

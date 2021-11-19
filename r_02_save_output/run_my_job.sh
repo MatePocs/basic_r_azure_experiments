@@ -1,0 +1,1 @@
+az ml job create --file my_job.yml --web --resource-group MP_ResourceGroup --workspace-name mp_ws_01
